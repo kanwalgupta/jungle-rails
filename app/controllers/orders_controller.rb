@@ -2,8 +2,14 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @line_items = LineItem.where(order_id: @order.id)
   end
+  helper_method :get_product_info
 
+  def get_product_info line_item
+    Product.find_by(id: line_item.product_id)
+  end
+  
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
