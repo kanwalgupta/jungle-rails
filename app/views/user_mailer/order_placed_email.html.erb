@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <% @line_items.each do |item| %>
+      <%= render 'order_item', product: (get_product_info item.product_id), item: item %>
+    <% end %>
+    <h3>Total Cost:  <%= humanized_money_with_symbol @order.total_cents / 100.00%></h3>
+    <h3><%= @order.email%></h3>
+  </body>
+</html> 
