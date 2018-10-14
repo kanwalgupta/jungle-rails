@@ -23,6 +23,25 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+        <% if current_user %>
+        <h3 class="text-center">Leave a Review</h3>
+        <%= form_for [@product, Review.new] do |form|%>
+  
+          <div class="form-group">
+            <%= form.label :description %>
+            <%= form.text_field :description, class: 'form-control' %>
+            <%= form.label :rating %>
+            <%= form.select :rating, options_for_select(1..5), { prompt: "Pick a rating" }, class: 'form-control' %>
+          </div>
+  
+          <%= form.submit 'Submit Review', class: 'btn btn-primary' %>
+          <% end %>
+         <% end %>
+         <h3 class="text-center">REVIEWS</h3>
+          <% @reviews.reverse.each do |review| %>
+            <%= render 'review', review: review, user: get_user(review.user_id)%>
+          <% end %>
+
       </div>
     </div>
 

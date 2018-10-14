@@ -28,6 +28,15 @@ puts "Finding or Creating Categories ..."
 cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
+User.create(:first_name => "Sabrina", :email => "Sabrina27@gmail.com", :password_digest => "$2a$10$vlfv5uZWvFKTsPBX.hKJ8uLby5yPPKETZmoCvS7nR1jguH/lH5URO")
+User.create(:first_name => "Kanwal", :email => "knwl_gupta1@yahoo.com", :password_digest => "$2a$10$vlfv5uZWvFKTsPBX.hKJ8uLby5yPPKETZmoCvS7nR1jguH/lH5URO")
+User.create(:first_name => "Sumit", :email => "sumit@gmail.com", :password_digest => "$2a$10$vlfv5uZWvFKTsPBX.hKJ8uLby5yPPKETZmoCvS7nR1jguH/lH5URO")
+Review.create(:product_id => 14, :user_id => 1, :description => "hierarchy CSS Refined", :rating => 1)
+Review.create(:product_id => 15, :user_id => 2, :description => "Credit Card Account transmit deposit Sleek Cotton Chips", :rating => 2)
+Review.create(:product_id => 14, :user_id => 1, :description => "Awesome Metal Grocery", :rating => 5)
+Review.create(:product_id => 17, :user_id => 3, :description => "Toys override", :rating => 3)
+Review.create(:product_id => 15, :user_id => 2, :description => "Licensed Operative Tactics Rustic Fresh Chair uniform", :rating => 3)
+
 
 ## PRODUCTS
 

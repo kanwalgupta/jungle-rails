@@ -1,0 +1,9 @@
+<dl class="dl-horizontal">
+<dt>Reviewed By</dt>
+<dd><%= user.first_name %></dd>
+<dd><%= review.description %></dd>
+<dt>Rating</dt>
+<dd><%= review.rating %></dd>
+<% if current_user.id === user.id %>
+<% end %>
+</dl>
